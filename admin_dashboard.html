@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        body {
+            background-image: url('logo.png'); /* Replace with your actual logo path */
+            background-repeat: no-repeat;
+            background-position: center; /* Adjust position as needed */
+            background-size: cover; /* Ensure the image covers the full background */
+            background-attachment: fixed; /* Keep the background image fixed */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0; /* Remove margin */
+            padding: 0; /* Remove padding */
+        }
+
+        .container-fluid {
+            padding: 0; /* Remove padding */
+            margin: 0; /* Remove margin */
+        }
+
+        .header {
+            background-color: #2a4d69; /* Dark blue background */
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            color: #ffffff;
+            margin-bottom: 20px; /* Add margin below header */
+        }
+
+        .dashboard-container {
+            padding: 30px;
+            margin-top: 20px;
+            background-color: #ffffff;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .requests-container {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #f7f7f7;
+            text-align: center;
+        }
+
+        .requests-button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 8px 16px;
+            border-radius: 10px;
+            background-color: #2a4d69;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            font-size: 14px;
+        }
+
+        .requests-button:hover {
+            background-color: #1c3d5a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="header">
+            <h1>Admin Dashboard</h1>
+            <h4>Managing Customer Requests & Laptop Inventory</h4>
+        </div>
+
+        <div class="dashboard-container">
+            <div class="requests-container">
+                <h2 class="requests-header">Customer Requests</h2>
+                <p>Welcome to the Admin Dashboard!</p>
+                <div class="requests-button" onclick="window.location.href='laptop_details.php'">
+                    <i class="fas fa-calendar-check"></i>
+                    <span style="margin-left: 10px;">Accept & Schedule</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

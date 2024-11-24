@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login - Online Placement Exam</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="login.php" method="POST">
+            <input type="text" name="username" placeholder="Username" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <select name="role">
+                <option value="candidate">Candidate</option>
+                <option value="admin">Admin</option>
+            </select><br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div class="dashboard-container" style="display: none;">
+        <h2>Welcome, Candidate</h2>
+        <p>Your exam is scheduled at: <span id="exam-time">10:00 AM, 25th September</span></p>
+        <button id="start-exam">Start Exam</button>
+    </div>
+
+    <script>
+        document.getElementById('start-exam').addEventListener('click', function() {
+            window.location.href = 'exam.php';
+        });
+    </script>
+    <style>/* style.css */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://wallpaperaccess.com/full/1598228.jpg'); /* Replace with your agriculture-themed image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+        
+        .login-container, .dashboard-container {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+        
+        .login-container h2, .dashboard-container h2 {
+            color: #007b00; /* Green to match the agricultural theme */
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        input[type="text"], input[type="password"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007b00; /* Green color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #005f00; /* Darker green on hover */
+        }
+        
+        #exam-time {
+            font-weight: bold;
+            color: #555;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .login-container, .dashboard-container {
+                width: 90%;
+                padding: 20px;
+            }
+        
+            body {
+                padding: 10px;
+            }
+        }
+        </style>
+</body>
+</html>

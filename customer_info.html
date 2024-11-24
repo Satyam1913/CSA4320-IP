@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Information - SS Agrimart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Customer Information</h1>
+    </header>
+
+    <main>
+        <form action="customer_info.php" method="POST">
+            <label for="customer_name">Customer Name:</label>
+            <input type="text" id="customer_name" name="customer_name" required>
+
+            <label for="info_type">View:</label>
+            <select id="info_type" name="info_type">
+                <option value="purchase">Purchase History</option>
+                <option value="service">Service History</option>
+            </select>
+
+            <button type="submit">View Info</button>
+        </form>
+
+        <div id="customer_info">
+            <!-- Customer information will be displayed here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SS Agrimart</p>
+    </footer>
+    <style>/* styles.css */
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('agrimart-bg.jpg'); /* Replace with an appropriate image */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: #333;
+        }
+        
+        header {
+            background-color: rgba(0, 128, 0, 0.9); /* Dark green background with slight transparency */
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        main {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: rgba(255, 255, 255, 0.95); /* Light semi-transparent background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        label {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #006400; /* Deep green for labels */
+        }
+        
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+        
+        input[type="text"]:focus, select:focus {
+            border-color: #006400; /* Green border on focus */
+            box-shadow: 0 0 5px rgba(0, 100, 0, 0.5);
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #006400; /* Deep green button */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #004d00; /* Darker green on hover */
+        }
+        
+        #customer_info {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #333;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        
+        footer {
+            background-color: rgba(0, 128, 0, 0.9); /* Same dark green as header */
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                width: 90%;
+                padding: 20px;
+            }
+        
+            header h1 {
+                font-size: 1.5rem;
+            }
+        
+            button {
+                font-size: 0.9rem;
+            }
+        }
+        </style>
+</body>
+</html>

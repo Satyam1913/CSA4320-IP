@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Agrimart Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .login-container h2 {
+            text-align: center;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .login-btn:hover {
+            background-color: #218838;
+        }
+        .register-link {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Login</h2>
+    <input type="text" id="email" class="input-field" placeholder="Email" required>
+    <input type="password" id="password" class="input-field" placeholder="Password" required>
+    <button class="login-btn" onclick="login()">Login</button>
+    <a href="register.html" class="register-link">Don't have an account? Register here</a>
+    <div id="error-message" class="error-message"></div>
+</div>
+
+<script>
+    // Dummy credentials (this would be handled via server-side authentication in a real system)
+    const users = [
+        { email: 'admin@agrimart.com', password: 'admin123', role: 'admin' },
+        { email: 'user@agrimart.com', password: 'user123', role: 'user' }
+    ];
+
+    // Login function
+    function login() {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const errorMessageDiv = document.getElementById('error-message');
+        
+        // Clear any previous error message
+        errorMessageDiv.innerHTML = '';
+
+        // Log the values for debugging
+        console.log('Attempting login with email:', email);
+        console.log('Attempting login with password:', password);
+        
+        // Check if the user exists with the provided credentials
+        const user = users.find(u => u.email === email && u.password === password);
+        
+        if (user) {
+            // Successfully logged in
+            console.log('User logged in successfully:', user);
+            alert('Successfully logged in!');
+            
+            // Redirection to homepage
+            window.location.href = 'index.html';  // Redirect to homepage after login
+        } else {
+            // Show error message if invalid credentials
+            errorMessageDiv.innerHTML = 'Invalid email or password. Please try again.';
+            console.log('Login failed for:', email);  // Debugging failed login
+        }
+    }
+</script>
+
+</body>
+</html>

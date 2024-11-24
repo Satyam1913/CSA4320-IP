@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Agrimart Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: rgba(13, 141, 192, 0.7);
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .payment-container {
+            padding: 20px;
+            text-align: center;
+        }
+        .payment-methods {
+            display: none;
+            margin-top: 20px;
+        }
+        .payment-methods button {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            border-radius: 4px;
+            margin: 10px;
+        }
+        .payment-methods button:hover {
+            background-color: #0056b3;
+        }
+        .order-confirmation {
+            display: none;
+            text-align: center;
+        }
+        .order-confirmation h2 {
+            color: green;
+            font-size: 2em;
+        }
+        .payment-button {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5em;
+            border-radius: 4px;
+        }
+        .payment-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <a href="index.html">
+        <img src="https://th.bing.com/th?id=OIP.OaxoprjB_thSeYQxCzfnQgHaDk&w=349&h=168&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt="Agrimart" class="logo">
+    </a>
+    <h1>Payment</h1>
+</header>
+
+<main class="payment-container">
+    <h2>Your payment is being processed...</h2>
+    <p>Thank you for choosing Agrimart. Please proceed to complete your payment.</p>
+    
+    <button class="payment-button" onclick="showPaymentMethods()">Complete Payment</button>
+
+    <!-- Payment Methods (Hidden by default) -->
+    <div class="payment-methods" id="payment-methods">
+        <p>Please select a payment method:</p>
+        <button onclick="selectPayment('Credit Card')">Credit Card</button>
+        <button onclick="selectPayment('PayPal')">PayPal</button>
+        <button onclick="selectPayment('UPI')">UPI</button>
+    </div>
+
+    <!-- Order Confirmation (Hidden by default) -->
+    <div class="order-confirmation" id="order-confirmation">
+        <h2>Your product has been ordered successfully!</h2>
+        <p>Thank you for shopping with Agrimart. We are processing your order and will ship it soon.</p>
+        <button class="payment-button" onclick="redirectHome()">Back to Homepage</button>
+    </div>
+</main>
+
+<script>
+    // Show payment methods when the "Complete Payment" button is clicked
+    function showPaymentMethods() {
+        document.querySelector('.payment-methods').style.display = 'block';
+        document.querySelector('.payment-button').style.display = 'none'; // Hide the "Complete Payment" button
+    }
+
+    // Simulate payment processing
+    function selectPayment(method) {
+        alert(`Processing payment through ${method}...`);
+        setTimeout(function() {
+            // After processing payment, show order confirmation
+            document.querySelector('.payment-methods').style.display = 'none';
+            document.querySelector('#order-confirmation').style.display = 'block';
+        }, 1500); // Simulate a delay for payment processing
+    }
+
+    // Redirect user to the homepage after confirming the order
+    function redirectHome() {
+        window.location.href = "index.html"; // Redirect to homepage
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrimart Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        header {
+            background-color: rgba(13, 141, 192, 0.7);
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: relative;
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .product {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            text-align: center;
+        }
+        .product img {
+            width: 280px;
+            height: 200px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            margin: 0 auto;
+        }
+        .product-info {
+            padding: 15px;
+        }
+        .product-info h2 {
+            font-size: 1.2em;
+        }
+        .rating {
+            margin: 10px 0;
+            color: orange;
+        }
+        .rating span {
+            color: black;
+        }
+        .price, .discount {
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .discount span {
+            text-decoration: line-through;
+            color: red;
+        }
+        .button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 4px;
+        }
+        .button:hover {
+            background-color: #218838;
+        }
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        .quantity-control button {
+            font-size: 1.5em;
+            padding: 5px 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .home-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 1.2em;
+            margin: 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: rgba(13, 141, 192, 0.7);
+            color: black;
+            text-align: center;
+            padding: 1em 0;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <a href="index.html">
+        <img src="https://th.bing.com/th?id=OIP.o-r1TOycBn8EpShhi0VSzAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt="Agrimart" class="logo">
+    </a>
+    <h1>Agrimart Store</h1>
+</header>
+
+<main class="product-list" id="product-list">
+    <!-- Dynamic product list will be generated here -->
+</main>
+
+<!-- Home Button -->
+<button class="home-button" onclick="goHome()">Go to Home</button>
+
+<footer class="footer">
+    <p>&copy; 2024 Agrimart. All rights reserved.</p>
+</footer>
+
+<script>
+    const products = [
+        {brand: "Seeds", name: "Tomato Seeds", price: 150, discount: 120, rating: 4.3, img: "https://th.bing.com/th?id=OIP.BoVqvLM-yeXSyDNVHuli6gAAAA&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2"},
+        {brand: "Fertilizers", name: "Organic Fertilizer", price: 350, discount: 300, rating: 4.6, img: "https://th.bing.com/th?id=OIP.mLV_4oYoN0Kvza5UQs7YHQHaJ4&w=216&h=288&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2"},
+        {brand: "Pesticides", name: "Pesticide Spray", price: 200, discount: 180, rating: 4.5, img: "https://th.bing.com/th?id=OIP.HdSLeQe1GAF_M-QQEjCWjAAAAA&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2"},
+        {brand: "Tools", name: "Garden Shovel", price: 500, discount: 450, rating: 4.4, img: "https://th.bing.com/th?id=OIP.dUw4jbyTw6JTAg0bMYzRNQHaEc&w=322&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2"},
+        {brand: "Equipment", name: "Hand Cultivator", price: 700, discount: 650, rating: 4.7, img: "https://th.bing.com/th?id=OIP.YcHffF1zGiNlGLalbgjxLAAAAA&w=164&h=164&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2"},
+        {brand: "Seeds", name: "Wheat Seeds", price: 180, discount: 150, rating: 4.2, img: "https://th.bing.com/th?id=OIP.dxrz1oIvxiSIQtEe4uuZgQAAAA&w=211&h=295&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2"},
+        {brand: "Fertilizers", name: "Chemical Fertilizer", price: 500, discount: 450, rating: 4.4, img: "https://th.bing.com/th?id=OIP.HEYnVIg4r1hkpFCT2V_h3QHaJZ&w=221&h=281&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2"},
+        {brand: "Tools", name: "Pruning Shears", price: 350, discount: 320, rating: 4.3, img: "http://ts2.mm.bing.net/th?id=OIP.v74MuTAAn4VwONSmQrUd6wHaD5&pid=15.1"},
+        {brand: "Equipment", name: "Seed Sower", price: 1000, discount: 950, rating: 4.6, img: "http://ts4.mm.bing.net/th?id=OIP.ExiNVWlgVxFddXHWw7pAeQHaEc&pid=15.1"},
+        {brand: "Pesticides", name: "Insecticide Spray", price: 250, discount: 220, rating: 4.4, img: "https://th.bing.com/th?id=OIP.yJ0vi9MXy7m8tUOdlfn2twHaJ4&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2"}
+    ];
+
+    // Display products
+    const productList = document.getElementById("product-list");
+
+    products.forEach(product => {
+        let productDiv = document.createElement("div");
+        productDiv.classList.add("product");
+        productDiv.innerHTML = `
+            <img src="${product.img}" alt="${product.name}">
+            <div class="product-info">
+                <h2>${product.name}</h2>
+                <p class="rating">⭐ ${product.rating} <span>(${product.rating} Ratings)</span></p>
+                <div class="price">₹${product.price}</div>
+                <div class="discount"><span>₹${product.discount}</span> - Save ₹${product.price - product.discount}</div>
+                <div class="quantity-control">
+                    <button onclick="updateQuantity(${products.indexOf(product)}, -1)">-</button>
+                    <span id="quantity-${products.indexOf(product)}">0</span>
+                    <button onclick="updateQuantity(${products.indexOf(product)}, 1)">+</button>
+                </div>
+                <button class="button" onclick="addToCart(${products.indexOf(product)})">Add to Cart</button>
+            </div>
+        `;
+        productList.appendChild(productDiv);
+    });
+
+    // Update the quantity of the product in cart
+    function updateQuantity(index, change) {
+        let quantitySpan = document.getElementById(`quantity-${index}`);
+        let currentQuantity = parseInt(quantitySpan.innerText);
+        currentQuantity = Math.max(currentQuantity + change, 0); // Ensure quantity doesn't go below 0
+        quantitySpan.innerText = currentQuantity;
+    }
+
+    // Add product to cart
+    function addToCart(index) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const product = products[index];
+        let quantity = parseInt(document.getElementById(`quantity-${index}`).innerText);
+
+        if (quantity > 0) {
+            let existingProduct = cart.find(item => item.name === product.name);
+            if (existingProduct) {
+                existingProduct.quantity += quantity; // Update quantity if product already in cart
+            } else {
+                product.quantity = quantity; // Add product with selected quantity
+                cart.push(product);
+            }
+            localStorage.setItem("cart", JSON.stringify(cart));
+        }
+    }
+
+    // Go to Home page
+    function goHome() {
+        window.location.href = "index.html";  // Redirect to home page (index.html)
+    }
+</script>
+
+</body>
+</html>

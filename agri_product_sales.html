@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Sales - SS </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Product Sales</h1>
+    </header>
+
+    <main>
+        <h2>Available products</h2>
+        <div id="product_list">
+            <?php
+            include 'db_connection.php';
+
+            // Check if the database connection is successful
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            $sql = "SELECT * FROM stock";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<div class='products'>
+                            <h3>" . $row['products_model'] . "</h3>
+                            <p>Configuration: " . $row['configuration'] . "</p>
+                            <p>Price: ₹" . $row['price'] . "</p>
+                            <p>Stock: " . $row['stock_available'] . "</p>
+                          </div>";
+                }
+            } else {
+                echo "No products available.";
+            }
+
+            $conn->close();
+            ?>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ram Infotech</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sadiq satyam - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqk1w2/knoG80kXw/8kgX29gaNFwLZTl+YNj/FGH+dJH+aGpFu0sFGxk8Up5+gK/fcp8pW3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><span style="font-weight: bold; color: #e6750c;">SS</span>Agrimart</h1>
+                <p style="font-size: 18px; color: #07e5d3;">Agri products & equipments</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sales.html">Online Store</a></li>
+                    <li><a href="My_Cart.html">My Cart</a></li>
+                    <li><a href="about_us.html">About Us</a></li>
+                    <li><a href="contact_us.html">Contact Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register/Sing Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Agri products , Reliable Service</h1>
+                <p>Your one-stop shop for all your Agricultural needs. Explore our selection of top-quality.</p>
+                <a href="sales.html" class="btn">Shop Agri products</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 id="our-services-text">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Agri Sales</h3>
+                    <p>Browse a wide range of equipments from leading brands, tailored to your needs and budget.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-tools"></i>
+                    <h3>Repair Services</h3>
+                    <p>Get expert reviews for your fields .</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>Troubleshooting Guides</h3>
+                    <p>Access our Best products to fix problems and learn how to fix them yourself.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SS . All Rights Reserved.</p>
+            <div class="social-media">
+                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <style>/* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header Section */
+        header {
+            background-color: #232528;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        header .logo h1 {
+            font-size: 28px;
+            margin: 0;
+            font-weight: bold;
+        }
+        
+        header .logo p {
+            margin: 5px 0 0;
+            font-style: italic;
+            font-size: 16px;
+        }
+        
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            margin: 0;
+        }
+        
+        header nav ul li {
+            margin: 0 15px;
+        }
+        
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        
+        header nav ul li a:hover {
+            color: #e6750c;
+        }
+        
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        #hero h1 {
+            font-size: 42px;
+            margin: 0 0 20px;
+            line-height: 1.2;
+        }
+        
+        #hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        #hero .btn {
+            background-color: #07e5d3;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        
+        #hero .btn:hover {
+            background-color: #05b9a9;
+        }
+        
+        /* Services Section */
+        #services {
+            background-color: #ffffff;
+            padding: 60px 0;
+        }
+        
+        #services h2 {
+            text-align: center;
+            color: #333;
+            font-size: 36px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        #services h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: #07e5d3;
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        
+        .services-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .service-item {
+            background-color: #f9f9f9;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(33.333% - 20px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-item i {
+            font-size: 36px;
+            color: #07e5d3;
+            margin-bottom: 15px;
+        }
+        
+        .service-item h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .service-item p {
+            font-size: 16px;
+            color: #666;
+        }
+        
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Footer Section */
+        footer {
+            background-color: #232528;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+        
+        footer .social-media a {
+            color: white;
+            margin: 0 10px;
+            font-size: 18px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        footer .social-media a:hover {
+            color: #07e5d3;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            header nav ul li {
+                margin: 10px 0;
+            }
+        
+            .services-grid {
+                flex-direction: column;
+            }
+        
+            .service-item {
+                flex: 1 1 100%;
+            }
+        }
+        </style>
+</body>
+</html>

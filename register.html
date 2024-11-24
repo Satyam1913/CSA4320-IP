@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Agrimart Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .register-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .register-container h2 {
+            text-align: center;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .register-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .register-btn:hover {
+            background-color: #218838;
+        }
+        .login-link {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="register-container">
+    <h2>Register</h2>
+    <input type="text" id="name" class="input-field" placeholder="Full Name" required>
+    <input type="email" id="email" class="input-field" placeholder="Email" required>
+    <input type="password" id="password" class="input-field" placeholder="Password" required>
+    <input type="password" id="confirm-password" class="input-field" placeholder="Confirm Password" required>
+    <button class="register-btn" onclick="register()">Register</button>
+    <a href="login.html" class="login-link">Already have an account? Login here</a>
+</div>
+<script>
+    // Function to handle user registration
+    function register() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+
+        // Check if the passwords match
+        if (password !== confirmPassword) {
+            alert('Passwords do not match!');
+            return;
+        }
+
+        // Dummy registration logic (this would be handled via server-side in a real app)
+        const newUser = { name, email, password, role: 'user' }; // Default role is 'user'
+
+        // Here you would normally send the user data to the server to be stored in a database
+
+        // Notify user that registration was successful and redirect to login page
+        alert('Registration successful! Please log in.');
+        window.location.href = 'login.html';  // Redirect to login page after successful registration
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Rental - Ram Infotech</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Laptop Rental Agreement</h1>
+    </header>
+
+    <main>
+        <form action="rental_agreement.php" method="POST">
+            <label for="customer_name">Customer Name:</label>
+            <input type="text" id="customer_name" name="customer_name" required>
+
+            <label for="rental_period">Rental Period (in days):</label>
+            <input type="number" id="rental_period" name="rental_period" required>
+
+            <label for="laptop_model">Laptop Model:</label>
+            <input type="text" id="laptop_model" name="laptop_model" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ram Infotech</p>
+    </footer>
+</body>
+</html>

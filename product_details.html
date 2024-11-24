@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agri Details - SS </title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            border-bottom: 1px solid #0056b3;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header img {
+            max-width: 100px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex-grow: 1;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s ease-in-out;
+        }
+        input[type="text"]:focus, textarea:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-top: 1px solid #0056b3;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="logo.png" alt="SS Logo">
+        </a>
+        <h1>Product Details</h1>
+    </header>
+
+    <main>
+        <?php
+        // Capture laptop_id and request_id from URL
+        $laptopId = $_GET['laptop_id'] ?? null;
+        $requestId = $_GET['request_id'] ?? null;
+
+        // Fetch laptop details from the database (optional)
+        // Assuming connection to database is already established
+        // $laptopDetails = fetchLaptopDetails($laptopId, $conn); // You can define this function to get details if needed
+
+        if ($AgriId && $requestId) {
+            echo '<form id="Agri-form" action="schedule_service.php" method="POST">';
+            echo '<input type="hidden" name="request_id" value="' . htmlspecialchars($requestId) . '">';
+            echo '<input type="hidden" name="Agri_id" value="' . htmlspecialchars($AgriId) . '">';
+
+            // Display product details (optional, if you fetch them from the DB)
+            // Example: echo '<p>Product Type: ' . htmlspecialchars($productDetails['model']) . '</p>';
+
+            echo '<label for="customer_name">Customer Name:</label>';
+            echo '<input type="text" id="customer_name" name="customer_name" required>';
+            echo '<label for="Product_Type">Product Type:</label>';
+            echo '<input type="text" id="Product_type" name="Product_type" required>';
+            echo '<label for="product_serial_number">Product Serial Number:</label>';
+            echo '<input type="text" id="product_serial_number" name="product_serial_number" required>';
+            echo '<label for="issue_description">Issue Description:</label>';
+            echo '<textarea id="issue_description" name="issue_description" rows="4" required></textarea>';
+            echo '<button type="submit">Schedule Service</button>';
+            echo '</form>';
+        } else {
+            echo '<p>Error: Missing required parameters (agri_id or request_id).</p>';
+        }
+        ?>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SS Agrimart</p>
+    </footer>
+</body>
+</html>
